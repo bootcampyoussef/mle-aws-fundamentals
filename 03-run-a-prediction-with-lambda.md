@@ -2,7 +2,7 @@
 
 **Goal:** Run the supplied Python handler in AWS and let it read exactly one
 private S3 object. You will use the web editor and the console's test event
-tool. There is no Function URL, public endpoint, or trigger in this lab.
+tool. There is no Function URL, public endpoint, or trigger in this step.
 
 AWS Lambda runs your code on demand without a server for you to manage. Each
 test sends a JSON **event** to the **handler** (the Python entry point) and
@@ -24,7 +24,7 @@ shows its return value. One run is called an **invocation**.
    </details>
 
 2. Choose **Author from scratch**. In **Function name**, enter a unique name
-   such as `mleaws-lab-predict-<suffix>`. In **Runtime**, choose **Python
+   such as `mleaws-predict-<suffix>`. In **Runtime**, choose **Python
    3.13**. Leave the other options as they are; do not add a public URL or
    event trigger. Choose **Create Event Function**.
 
@@ -33,7 +33,7 @@ shows its return value. One run is called an **invocation**.
 
    ![Runtime picker with Python choices](assets/screenshots/03-runtime-picker.jpg)
 
-   ![Create Event Function form with a Python runtime and the lab name](assets/screenshots/03-create-function.jpg)
+   ![Create Event Function form with a Python runtime and the function name](assets/screenshots/03-create-function.jpg)
 
    ![Optional Getting started dialog after function creation](assets/screenshots/03-getting-started.jpg)
 
@@ -51,6 +51,7 @@ shows its return value. One run is called an **invocation**.
 
 1. Choose **Configuration → Environment variables → Edit → Add environment
    variable**.
+
 2. Set **Key** to `MODEL_BUCKET` and **Value** to the exact bucket name from
    lesson 02, without `s3://`, a path, quotation marks, or angle brackets.
    Choose **Save** and wait for the update. The bucket name is configuration,
@@ -74,7 +75,7 @@ function runs under an **execution role**, separate from your sign-in
 identity. Its trust settings let Lambda use the role; its permission
 policies say what the function can do. The new AWS experience may select a
 built-in `PowerUserRole`. **Do not modify or use that role for the test.**
-Create a role for this one lab instead.
+Create a role for this function instead.
 
 1. In a separate tab for the same project, open **IAM → Roles → Create
    role**. In **Trusted entity type**, choose **AWS service**, then
@@ -103,7 +104,7 @@ Create a role for this one lab instead.
 
    ![IAM results filtered to AWSLambdaBasicExecutionRole](assets/screenshots/03-iam-basic-logs.jpg)
 
-   ![Review page with the dedicated lab role name](assets/screenshots/03-iam-role-review.jpg)
+   ![Review page with the dedicated execution role name](assets/screenshots/03-iam-role-review.jpg)
 
    ![IAM Roles list confirming the role was created](assets/screenshots/03-iam-role-created.jpg)
 
@@ -113,7 +114,7 @@ Create a role for this one lab instead.
    JSON**. Replace the editor contents with [read-model-policy.json](example/read-model-policy.json).
    In **Resource**, replace only `REPLACE_WITH_BUCKET_NAME` with your actual
    bucket name. Keep `/model.json` at the end: `s3:GetObject` allows reading
-   that one object. Choose **Next**, name the policy `ReadLabModel`, then
+   that one object. Choose **Next**, name the policy `ReadPredictionModel`, then
    choose **Create policy**.
 
    <details>
@@ -123,7 +124,7 @@ Create a role for this one lab instead.
 
    ![JSON policy limiting s3:GetObject to model.json](assets/screenshots/03-iam-policy-json.jpg)
 
-   ![Inline policy review with the ReadLabModel name](assets/screenshots/03-iam-policy-review.jpg)
+   ![Inline policy review with the ReadPredictionModel name](assets/screenshots/03-iam-policy-review.jpg)
 
    </details>
 

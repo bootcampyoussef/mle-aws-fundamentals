@@ -4,7 +4,7 @@
 before creating anything. Allow about 25 minutes; account verification can take
 longer. The AWS interface may differ by country or account history.
 
-| Term | Meaning for this lab |
+| Term | Meaning in this course |
 | --- | --- |
 | AWS Builder ID | Your personal sign-in identity. Having one alone does not give you an AWS project or Free credits. |
 | Project and account | In the new AWS experience, a project contains an AWS account that holds and isolates its resources. |
@@ -17,17 +17,21 @@ longer. The AWS interface may differ by country or account history.
 1. Open [Sign up for AWS (new)](https://signin.aws.amazon.com/signup?request_type=builderId).
    Check that the site is AWS. Use the newer sign-up page, not **Continue
    with advanced features**.
+
 2. For email signup, enter an address you can access and choose **Continue with
    email**. You can also choose a supported sign-up option shown on the page.
    If you already have a Builder ID, use the matching identity.
 
    ![AWS sign-up with Continue with email and the separate advanced option](assets/screenshots/01-sign-up.jpg)
+
 3. Check your inbox, enter the verification code only on AWS, and follow the
    prompts to create or sign in to your Builder ID. Never share the code.
+
 4. Enter your own contact information if asked. Read the terms yourself. If
    asked to select a plan, choose **Free**. If AWS asks for a payment card,
    routes you to **Paid**, or will not verify your account, stop. Do not
    invent account details or change your country to bypass the prompt.
+
 5. AWS can create your first project automatically. Continue to **AWS Settings**
    once account setup is complete or if you are using a project you already own.
 
@@ -41,9 +45,11 @@ Multi-factor authentication (MFA) adds a second way to verify your identity,
 such as a code from an authenticator app or a security key.
 
 1. Open your [AWS Builder ID profile](https://profile.aws.amazon.com/) and sign in.
+
 2. Choose **Security → Register device**. Set a recovery email if AWS asks.
 
    ![Builder ID Security page with Register device in the MFA section](assets/screenshots/01-security.jpg)
+
 3. For **Authenticator app**, scan the QR code with your app, enter the current
    code, and choose **Assign MFA**. For a security key, choose **Security key**
    and follow the browser prompts. Do not share or screenshot the QR code,
@@ -62,9 +68,9 @@ for the device-specific screen. If MFA is already set up, keep it enabled.
    ![Billing shows the Free plan, credits remaining, and the trial period](assets/screenshots/01-free-plan.jpg)
 
 2. Choose **Projects**. Open the project AWS created, or the dedicated training
-   project approved by your coach. If you were asked to make a separate lab
+   project approved by your coach. If you were asked to make a separate training
    project and the option is available, choose **Create project**, use a name
-   such as `mle.aws.lab`, and choose **Create**. Otherwise use the existing
+   such as `mle.aws.practice`, and choose **Create**. Otherwise use the existing
    training project; do not activate advanced features.
 
    <details>
@@ -108,10 +114,12 @@ skip it if the mission is absent or you do not control the training project.
    already selected, open the listed activity directly.
 
    ![Explore AWS filter with the Earn AWS credits option](assets/screenshots/01-credits-filter.jpg)
+
 2. Choose **Set up a cost budget using AWS Budgets**. Read its reward and
    **Complete by** date, then choose **Start activity**.
 
    ![Budget activity details with reward, deadline, and Start activity](assets/screenshots/01-budgets-activity.jpg)
+
 3. Keep **Use a template (simplified)** and **Monthly cost budget**, as
    preselected by the activity. Follow the guided **Next** prompts to name
    it `mle-capstone-alert`, enter **5 USD** as an example alert budget, and
@@ -125,6 +133,7 @@ skip it if the mission is absent or you do not control the training project.
    ![The budget form with the name, 5 USD amount, and an example email entered](assets/screenshots/01-budgets-fields.jpg)
 
    </details>
+
 4. Review the project, amount, and email. Choose **Create budget** and
    check that it is listed in **Budgets**. Check the activity status on
    **Console Home** and open **AWS Settings → Billing → Credits remaining**
@@ -151,10 +160,10 @@ skip it if the mission is absent or you do not control the training project.
    screenshots. There is no need to buy a subscription for this lesson.
 
 The [AWS invitation guide](https://docs.aws.amazon.com/accounts/latest/reference/invite-team-members.html)
-explains the permissions and invitation process. Invitations for this lab are
+explains the permissions and invitation process. Invitations are
 managed by the coach, not by learners.
 
-**Checkpoint:** You have a Free lab project confirmed by you or its owner,
+**Checkpoint:** You have a Free project confirmed by you or its owner,
 and you know the Region. Continue with [02 - Store a Model in S3](02-store-a-model-in-s3.md).
 
 [AWS sign-up guide](https://docs.aws.amazon.com/accounts/latest/reference/sign-in-new.html)

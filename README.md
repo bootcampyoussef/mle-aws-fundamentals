@@ -8,11 +8,13 @@ You will deploy and test a private Lambda function from the console. The
 CloudFront and ECS example shows what a full HTTPS deployment looks like;
 you will not create those resources.
 
-Outside the two-hour lab: follow the optional [credits and budget alert](01-create-an-aws-free-account.md#optional-earn-credits-and-set-a-budget-alert)
-or watch the [10–15 minute CPU training demo](05-map-aws-services-to-your-capstone.md#optional-demo-train-on-cpu-with-codebuild).
+Outside the two-hour walkthrough: follow the optional [credits and budget alert](01-create-an-aws-free-account.md#optional-earn-credits-and-set-a-budget-alert)
+or watch the [10–15 minute CPU training demo](02-store-a-model-in-s3.md#optional-demo-train-on-cpu-with-codebuild).
+For a hands-on HTTPS deployment, [add a web form and prediction API](05-serve-a-prediction-in-the-browser.md)
+before you delete your Lambda.
 
 > [!CAUTION]
-> **DELETE YOUR LAB RESOURCES WHEN YOU ARE DONE. DO NOT JUST PAUSE OR STOP THEM.**
+> **DELETE THE RESOURCES YOU CREATED. DO NOT JUST PAUSE OR STOP THEM.**
 > Closing the browser or stopping compute does not remove storage, log groups,
 > allocated public IPs, or load balancers. Those resources can keep using your
 > Free plan credits, even when no one is running predictions. Follow the
@@ -40,11 +42,12 @@ or watch the [10–15 minute CPU training demo](05-map-aws-services-to-your-caps
 
 | File / Folder | Description |
 | --- | --- |
+| [00 - AWS at a Glance](00-aws-at-a-glance.md) | Start here: follow one prediction and compare local, AWS, Azure and Google Cloud services. |
 | [01 - Create or Join an AWS Free Project](01-create-an-aws-free-account.md) | Sign in, protect your identity, and verify the plan and Region. |
-| [02 - Store a Model in S3](02-store-a-model-in-s3.md) | Create a private bucket and upload the provided model artifact. |
+| [02 - Store a Model in S3](02-store-a-model-in-s3.md) | Create a private bucket and upload the model artifact; optional CPU training demo. |
 | [03 - Deploy a Prediction Function](03-run-a-prediction-with-lambda.md) | Give Lambda access to one object and run a prediction in the cloud. |
 | [04 - Read the Logs](04-read-logs-in-cloudwatch.md) | Find a request by ID and diagnose a failed prediction. |
-| [05 - Map AWS Services to Your Capstone](05-map-aws-services-to-your-capstone.md) | Compare AWS services, watch optional CPU training, and trace an HTTPS deployment. |
+| [05 - Serve a Prediction in the Browser](05-serve-a-prediction-in-the-browser.md) (optional) | Connect a web form to a real prediction API, trace its request, then remove the public endpoint. |
 | [06 - Clean Up and Check Billing](06-clean-up-and-check-billing.md) | Delete the function, log group, role, and bucket and verify removal. |
 
 ```mermaid
@@ -69,6 +72,9 @@ flowchart LR
 
 ## Setup
 
+Some screenshots hide resource names. Where a field is masked, use the
+name you chose for your own resource, not the text from the screenshot.
+
 1. Open the [account walkthrough](01-create-an-aws-free-account.md). If you
    were invited to a training project, follow the invite path instead of
    setting up a second AWS account.
@@ -76,7 +82,7 @@ flowchart LR
    **Download raw file**. Keep its original filename. Keep the handler and IAM
    policy tabs open for copying in the browser.
 3. Keep the [cleanup checklist](06-clean-up-and-check-billing.md) open while
-   you work. Use one project, one Region, and a unique set of lab names.
+   you work. Use one project, one Region, and unique names for your resources.
 
 ## References & Further Reading
 

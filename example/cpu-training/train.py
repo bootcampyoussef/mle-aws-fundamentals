@@ -1,4 +1,4 @@
-"""Fit the lab's synthetic linear model without external dependencies."""
+"""Fit a synthetic linear model without external dependencies."""
 
 import json
 from pathlib import Path

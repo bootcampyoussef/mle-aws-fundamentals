@@ -34,9 +34,11 @@ specific invocation.
 1. Locate the `prediction` event with your request ID. Select the chevron on
    the left of the row to read the full message. Confirm `result=5` or
    `result=15`.
+
 2. Find and expand the `validation_error` event from the invalid input. A
    validation warning is different from an exception such as S3 `AccessDenied`.
-3. Find the corresponding `REPORT` line. Compare **Duration** (runtime
+
+3. Find the corresponding `REPORT` line. Compare **Duration** (execution
    time reported by Lambda) and **Billed Duration** (the duration used for
    billing). Neither is the end-to-end time experienced by a client. A
    colder first invocation may show **Init Duration** as well.
@@ -48,7 +50,7 @@ specific invocation.
 
 Do not add a paid dashboard or log analytics feature for this exercise. Log
 storage can continue to use credits after the function stops receiving
-requests. Delete the lab group during cleanup.
+requests. Delete the function's log group during cleanup.
 
 ## Exercise: Change the Model, Not the Code
 
@@ -88,4 +90,5 @@ file if you plan to run the baseline again.
 
 </details>
 
-Next: [05 - Map AWS Services to Your Capstone](05-map-aws-services-to-your-capstone.md).
+Next: [05 - Serve a Prediction in the Browser](05-serve-a-prediction-in-the-browser.md), or skip directly to
+[06 - Clean Up and Check Billing](06-clean-up-and-check-billing.md).

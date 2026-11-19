@@ -21,7 +21,11 @@ def lambda_handler(event, context):
     x = event.get("x") if isinstance(event, dict) else None
     request_id = context.aws_request_id
 
-    if type(x) not in (int, float) or not -1_000_000 <= x <= 1_000_000:
+    if (
+        isinstance(x, bool)
+        or not isinstance(x, (int, float))
+        or not -1_000_000 <= x <= 1_000_000
+    ):
         logger.warning("validation_error request_id=%s", request_id)
         return {"ok": False, "error": "x must be a number between -1000000 and 1000000"}
 
